@@ -1,27 +1,19 @@
 require 'pry'
 
 def start
-  puts "enter a word"
-  @word = gets.downcase.strip
-  word_analyze
-end
-
-def word_analyze
-  @compare = @word.chars
-  @reverse=[]
+  puts "Enter a word"
+  word = gets.downcase.strip
+  low_word =word.chars
+  reverse=[]
   i = -1
-  @compare.each do 
-    @reverse << @compare[i]
+  low_word.each do 
+    reverse << low_word[i]
     i-=1
   end
-  analyze
-end
-
-def analyze
-  if @word.chars === @reverse
-    puts "the word #{@word} IS a palidrome! Try another word!"
+  if word.chars === reverse
+    puts "The word '#{word}' IS a palidrome! Try another!"
   else
-    puts "the word #{@word} is not a palindrome. Try another word!"
+    puts "Sorry, the word '#{word}' is not a palindrome. Try again!"
   end
   start
 end
